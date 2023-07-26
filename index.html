@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Interview Questions</title>
+    <style>
+      p,table,ul, pre {
+        margin: 0px 20px;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>1. What is NodeJs?</h1>
+    <p>
+      Node is a open-source, cross-platform run-time environment that allows you
+      to run JS code on server-side, built on Chrome's V8 JS engine that execute
+      JS outside the browser.
+      <br />
+      It is asynchronous and single-threaded in nature.
+    </p>
+
+    <h1>2. Why NodeJs is asynchronous in nature?</h1>
+    <p>
+      Bcz it performs non-blocking operations means it doesn't block the
+      execution of further operation.
+    </p>
+
+    <h1>3. What is cross-platform, single-threaded and open-source?</h1>
+    <p>
+      OPEN-SOURCE means code that is designed to be accessible publically.
+      <br />
+      CROSS-PLATFORM means NodeJS code can be run on various platforms like MAC,
+      Windows pr where Js is installed etc.
+      <br />
+      SINGLE-THREADED means it can perform only one task at a time.
+    </p>
+
+    <h1>4. What is NPM?</h1>
+    <p>
+      NPM stands for Node Package Manager.
+      <br />
+      It comes in-built along with NodeJS.
+      <br />
+      Main two functions of npm are :<br />
+      1. It works as an online repository for NodeJS modules/packages so that
+      everyone can share tools written in Js.
+      <br />
+      2. It works on command-line utility to install packages, to do version
+      managment and dependencies managment of NodeJs packages.
+    </p>
+
+    <h1>5. What is Module?</h1>
+    <p>
+      Module is a small unit of independent, reusable code that is desired to be
+      used as a building block.
+      <br />
+      It can be import and export.
+      <br />
+      Types of modules are :
+      <br />
+      1. Built-in Modules ==> Modules that we can use without installation like
+      fs, http, url, path
+      <br />
+      2. Local/User-define Modules ==> Modules that we created locally in NodeJs
+      App.
+      <br />
+      3. Third Party Modules ==> Modules that we can use after installation like
+      express, cors, jsonwebtoken, bcrypt etc.
+      <br /><br />
+      Each file in Node.js is treated as a separate module, and you can define
+      what parts of the module (variables, functions, objects, etc.) should be
+      accessible to other modules using the module.exports or exports object.
+    </p>
+
+    <h1>6. What is the purpose of "module.exports" in NodeJS?</h1>
+    <p>
+      "module.exports" is a special object used to define public interface. If
+      we want to export some variable, functions and objects from one module to
+      another module, we use "module.exports".
+    </p>
+
+    <h1>7. Difference between default export and named export.</h1>
+    <p>
+      DEFAULT EXPORT ==> It allows you to export single value from a module
+      which can be imported with any name in another module.
+      <br />
+      NAMED EXPORT ==> It allows you to export multiple values from a module and
+      each value must be imported using its exact name inside curly in another
+      module.
+    </p>
+
+    <h1>8. How do you import any module in Node.js?</h1>
+    <p>
+      When we want to import any variable, function and object fom one module to
+      another in NodeJS, we use "require()" function.
+      <br />
+      "require()" is a in-built function that allows you to include external
+      modules that exist in separate JS files. It basically read a Js file,
+      execute it and then proceeds to return the export object.
+    </p>
+
+      <h1>9. Difference between HTTP and HTTPS</h1>
+        <table border="1" cellpadding="4" cellspacing="0">
+            <tr>
+                <th></th>
+                <th>HTTP</th>
+                <th>HTTPS</th>
+            </tr>
+            <tr>
+                <th>1.</th>
+                <td>Stands for Hyper Text Transfer Protocol</td>
+                <td>Stands for Hyper Text Transfer Protocol Secure</td>
+            </tr>
+            <tr>
+                <th>2.</th>
+                <td>It uses port number 80 for communication.</td>
+                <td>It uses port number 443 for communication.</td>
+            </tr>
+            <tr>
+                <tH>3.</tH>
+                <td>It doesn't uses encryption which results low security.</td>
+                <td>It uses encryption which results better security than 
+                    HTTP.</td>
+            </tr>
+            <tr>
+                <th>4.</th>
+                <td>HTTP speed is faster than HTTPS.</td>
+                <td>HTTPS speed is slower than HTTP.</td>
+            </tr>
+            <tr>
+                <th>5.</th>
+                <td>It works on Application Layer of OSI model.</td>
+                <td>It works on Transport Layer of OSI Model.</td>
+            </tr>
+        </table>
+
+        <h1>10. What are the different types of HTTP requests?</h1>
+        <p>
+            The different types of HTTP requests that we use most frequently are:
+        <ul>
+            <li>POST ==> Used to send data to the server.</li>
+            <li>GET ==> Used to read data from the server.</li>
+            <li>PUT/PATCH ==> Both are used to update the data but the differnce is that PUT updates the whole resource and PATCH only update a part of resource specified in request, leaving rest unchanged.</li>
+            <li>DELETE ==> USed to delete a specified resource on the server.</li>
+        </ul>
+       </p>
+        
+
+       <h1>11. Create a simple server using HTTP.</h1>
+       <pre>
+         const http = require("http");
+
+         const app = http.createServer((req, res)=>{
+            console.log("Hello")
+            res.write("I am SErver")
+            res.end()
+         })
+
+         app.listen(3000,()=>{
+            console.log("Server is running...!!")
+         })
+       </pre>
+
+       <h1>11. What is Express? How it helps you to create a backend application? Advantages of using express.</h1>
+       <p>EXpress is a lightweight and unopinionated web application framework that runs on NodeJs.The MAIN purpose of Express is to simplify and speed up the process of building robust backend app and APIs.
+        <br>
+        It helps in making backend app by providing a set tools amd features that make a easier to handle routing, manage http req and res, work with middlewares and making the development process more efficent and organized.   
+       </p>
+
+       <h1>12. Create a server using Express.</h1>
+       <pre>
+        const express= require("express")
+        const app = express()
+         
+        app.get("/index",(req,res)=>{
+            res.send("Hello")
+            console.log("I am EXpress server.")
+        })
+
+        app.listen(3000,()=>{
+            console.log("Server is running...!!")
+         })
+
+       </pre>
+
+  </body>
+</html>
