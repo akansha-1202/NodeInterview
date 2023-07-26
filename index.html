@@ -37,7 +37,12 @@
       SINGLE-THREADED means it can perform only one task at a time.
     </p>
 
-    <h1>4. What is NPM?</h1>
+    <h1>4. Blocking vs Non-blocking</h1>
+    <p>Blocking ==><br>It refers to the programs that blocks the execution of further operation until current operation finishes.<br> These methods are executed Synchronously means the program execute line by line and perform only one task at a time. The program waits until the called function returns some value, then on;y next task will execute. </p>
+    <br>
+    <p>Non-Blocking ==><br> It refers to the program that doesn't block the execution of further operation.<br> These methods are executed Asynchronously means program will not execute line by line. The program doesn't wait for time-consuming task to complete and move on to the next task. The time-consuming task will execute in background while rest of the code continue to execute.</p>
+
+    <h1>5. What is NPM?</h1>
     <p>
       NPM stands for Node Package Manager.
       <br />
@@ -51,7 +56,7 @@
       managment and dependencies managment of NodeJs packages.
     </p>
 
-    <h1>5. What is Module?</h1>
+    <h1>6. What is Module?</h1>
     <p>
       Module is a small unit of independent, reusable code that is desired to be
       used as a building block.
@@ -74,14 +79,14 @@
       accessible to other modules using the module.exports or exports object.
     </p>
 
-    <h1>6. What is the purpose of "module.exports" in NodeJS?</h1>
+    <h1>7. What is the purpose of "module.exports" in NodeJS?</h1>
     <p>
       "module.exports" is a special object used to define public interface. If
       we want to export some variable, functions and objects from one module to
       another module, we use "module.exports".
     </p>
 
-    <h1>7. Difference between default export and named export.</h1>
+    <h1>8. Difference between default export and named export.</h1>
     <p>
       DEFAULT EXPORT ==> It allows you to export single value from a module
       which can be imported with any name in another module.
@@ -91,7 +96,7 @@
       module.
     </p>
 
-    <h1>8. How do you import any module in Node.js?</h1>
+    <h1>9. How do you import any module in Node.js?</h1>
     <p>
       When we want to import any variable, function and object fom one module to
       another in NodeJS, we use "require()" function.
@@ -101,7 +106,7 @@
       execute it and then proceeds to return the export object.
     </p>
 
-      <h1>9. Difference between HTTP and HTTPS</h1>
+      <h1>10. Difference between HTTP and HTTPS</h1>
         <table border="1" cellpadding="4" cellspacing="0">
             <tr>
                 <th></th>
@@ -136,7 +141,7 @@
             </tr>
         </table>
 
-        <h1>10. What are the different types of HTTP requests?</h1>
+        <h1>11. What are the different types of HTTP requests?</h1>
         <p>
             The different types of HTTP requests that we use most frequently are:
         <ul>
@@ -148,7 +153,7 @@
        </p>
         
 
-       <h1>11. Create a simple server using HTTP.</h1>
+       <h1>12. Create a simple server using HTTP.</h1>
        <pre>
          const http = require("http");
 
@@ -163,13 +168,13 @@
          })
        </pre>
 
-       <h1>11. What is Express? How it helps you to create a backend application? Advantages of using express.</h1>
+       <h1>13. What is Express? How it helps you to create a backend application? Advantages of using express.</h1>
        <p>EXpress is a lightweight and unopinionated web application framework that runs on NodeJs.The MAIN purpose of Express is to simplify and speed up the process of building robust backend app and APIs.
         <br>
         It helps in making backend app by providing a set tools amd features that make a easier to handle routing, manage http req and res, work with middlewares and making the development process more efficent and organized.   
        </p>
 
-       <h1>12. Create a server using Express.</h1>
+       <h1>14. Create a server using Express.</h1>
        <pre>
         const express= require("express")
         const app = express()
