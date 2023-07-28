@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Node Interview Questions</title>
     <style>
-      p,table,ul, pre {
+      p{
         margin: 0px 20px;
         color: blue;
+      }
+      body{
+        padding: 20px;
+      }
+      pre{
+        color: red;
+        margin: 0px 20px;
+      }
+      ul{
+        color:darkgreen;
+        margin: 0px 20px;
+      }
+      table{
+        color:magenta;
+        margin: 0px 20px;
       }
     </style>
   </head>
   <body>
-    <h1>1. What is NodeJs?</h1>
+     <h1>Day 1</h1>
+
+    <h3>1. What is NodeJs?</h3>
     <p>
       Node is a open-source, cross-platform run-time environment that allows you
       to run JS code on server-side, built on Chrome's V8 JS engine that execute
@@ -21,13 +38,13 @@
       It is asynchronous and single-threaded in nature.
     </p>
 
-    <h1>2. Why NodeJs is asynchronous in nature?</h1>
+    <h3>2. Why NodeJs is asynchronous in nature?</h3>
     <p>
       Bcz it performs non-blocking operations means it doesn't block the
       execution of further operation.
     </p>
 
-    <h1>3. What is cross-platform, single-threaded and open-source?</h1>
+    <h3>3. What is cross-platform, single-threaded and open-source?</h3>
     <p>
       OPEN-SOURCE means code that is designed to be accessible publically.
       <br />
@@ -37,12 +54,12 @@
       SINGLE-THREADED means it can perform only one task at a time.
     </p>
 
-    <h1>4. Blocking vs Non-blocking</h1>
+    <h3>4. Blocking vs Non-blocking</h3>
     <p>Blocking ==><br>It refers to the programs that blocks the execution of further operation until current operation finishes.<br> These methods are executed Synchronously means the program execute line by line and perform only one task at a time. The program waits until the called function returns some value, then on;y next task will execute. </p>
     <br>
     <p>Non-Blocking ==><br> It refers to the program that doesn't block the execution of further operation.<br> These methods are executed Asynchronously means program will not execute line by line. The program doesn't wait for time-consuming task to complete and move on to the next task. The time-consuming task will execute in background while rest of the code continue to execute.</p>
 
-    <h1>5. What is NPM?</h1>
+    <h3>5. What is NPM?</h3>
     <p>
       NPM stands for Node Package Manager.
       <br />
@@ -56,7 +73,7 @@
       managment and dependencies managment of NodeJs packages.
     </p>
 
-    <h1>6. What is Module?</h1>
+    <h3>6. What is Module?</h3>
     <p>
       Module is a small unit of independent, reusable code that is desired to be
       used as a building block.
@@ -79,14 +96,14 @@
       accessible to other modules using the module.exports or exports object.
     </p>
 
-    <h1>7. What is the purpose of "module.exports" in NodeJS?</h1>
+    <h3>7. What is the purpose of "module.exports" in NodeJS?</h3>
     <p>
       "module.exports" is a special object used to define public interface. If
       we want to export some variable, functions and objects from one module to
       another module, we use "module.exports".
     </p>
 
-    <h1>8. Difference between default export and named export.</h1>
+    <h3>8. Difference between default export and named export.</h3>
     <p>
       DEFAULT EXPORT ==> It allows you to export single value from a module
       which can be imported with any name in another module.
@@ -96,7 +113,7 @@
       module.
     </p>
 
-    <h1>9. How do you import any module in Node.js?</h1>
+    <h3>9. How do you import any module in Node.js?</h3>
     <p>
       When we want to import any variable, function and object fom one module to
       another in NodeJS, we use "require()" function.
@@ -106,7 +123,7 @@
       execute it and then proceeds to return the export object.
     </p>
 
-      <h1>10. Difference between HTTP and HTTPS</h1>
+      <h3>10. Difference between HTTP and HTTPS</h3>
         <table border="1" cellpadding="4" cellspacing="0">
             <tr>
                 <th></th>
@@ -141,19 +158,19 @@
             </tr>
         </table>
 
-        <h1>11. What are the different types of HTTP requests?</h1>
+        <h3>11. What are the different types of HTTP requests?</h3>
         <p>
             The different types of HTTP requests that we use most frequently are:
         <ul>
-            <li>POST ==> Used to send data to the server.</li>
-            <li>GET ==> Used to read data from the server.</li>
-            <li>PUT/PATCH ==> Both are used to update the data but the differnce is that PUT updates the whole resource and PATCH only update a part of resource specified in request, leaving rest unchanged.</li>
+            <li>POST ==> Used to create a new resource on the server.</li>
+            <li>GET ==> Used to read a resource from the server.</li>
+            <li>PUT/PATCH ==> Both are used to update the existing resource but the differnce is that PUT updates the whole resource and PATCH only update a part of resource specified in request, leaving rest unchanged.</li>
             <li>DELETE ==> USed to delete a specified resource on the server.</li>
         </ul>
        </p>
         
 
-       <h1>12. Create a simple server using HTTP.</h1>
+       <h3>12. Create a simple server using HTTP.</h3>
        <pre>
          const http = require("http");
 
@@ -168,13 +185,13 @@
          })
        </pre>
 
-       <h1>13. What is Express? How it helps you to create a backend application? Advantages of using express.</h1>
+       <h3>13. What is Express? How it helps you to create a backend application? Advantages of using express.</h3>
        <p>EXpress is a lightweight and unopinionated web application framework that runs on NodeJs.The MAIN purpose of Express is to simplify and speed up the process of building robust backend app and APIs.
         <br>
         It helps in making backend app by providing a set tools amd features that make a easier to handle routing, manage http req and res, work with middlewares and making the development process more efficent and organized.   
        </p>
 
-       <h1>14. Create a server using Express.</h1>
+       <h3>14. Create a server using Express.</h3>
        <pre>
         const express= require("express")
         const app = express()
@@ -190,5 +207,335 @@
 
        </pre>
 
+       <h1>DAY 2</h1>
+
+       <h3>15. Explain HTTP Response Status Codes used in Backend App.</h3>
+       <table border="1" cellpadding="4" cellspacing="0">
+        <caption>HTTP Response Status Code</caption>
+        <tr>
+            <th></th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>(i)</td>
+            <td>200</td>
+            <td>OK</td>
+            <td>Standard Successful Response</td>
+        </tr>
+        <tr>
+            <td>(ii)</td>
+            <td>201</td>
+            <td>CREATED</td>
+            <td>New resource is created</td>
+        </tr>
+        <tr>
+            <td>(iii)</td>
+            <td>301</td>
+            <td>Moved Permanently</td>
+            <td>Resource is moved Permanently to a new URL</td>
+        </tr>
+        <tr>
+            <td>(iv)</td>
+            <td>304</td>
+            <td>Not Modified</td>
+            <td>Page is stored in cache, safe to use</td>
+        </tr>
+        <!-- <tr>
+            <td>(v)</td>
+            <td>307</td>
+            <td>Temporary redirect</td>
+            <td>Use a new URl now, try old later</td>
+        </tr> -->
+        <tr>
+          <td>(v)</td>
+          <td>400</td>
+          <td>Bad Request</td>
+          <td>Whenever the client request a dtata/page and the server is unable to understand anything it can be a missing parameter or else it can have wrong request method.</td>
+      </tr>
+        <tr>
+            <td>(vi)</td>
+            <td>401</td>
+            <td>Unauthorized</td>
+            <td>Authentication failed.()</td>
+        </tr>
+        <tr>
+            <td>(vii)</td>
+            <tD>403</tD>
+            <td>Forbidden</td>
+            <td>Disallowed, auth will not help.</td>
+        </tr>
+        <tr>
+            <td>(viii)</td>
+            <td>404</td>
+            <td>Not Found</td>
+            <td>Server is unable to find the resource</td>
+        </tr>
+        <tr>
+            <td>(ix)</td>
+            <td>405</td>
+            <td>Method Not Allowed</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>(x)</td>
+            <td>500</td>
+            <td>Internal Server Error</td>
+            <td>Server encountered some error(This will come whenever the client has request something from the server but server is unable to fullfilled bcz )</td>
+        </tr>
+        <tr>
+            <td>(xi)</td>
+            <td>503</td>
+            <td>Service unavailable</td>
+            <td>Server is currently unavailable</td>
+        </tr>
+       </table>
+
+       <h3>16. What is CORS?</h3>
+       <p>CORS stands for Cross-Origin-Resource-Sharing.<br>
+        CORS is a permission slip that websites give to each other to share data and resource safely. It bypass the browser's security rule called SOP(Same Origin Policy) so that websites from diffrent origin can work together easily.
+      </p>
+
+
+      <h3>17. Implementatio of CORS.</h3>
+      <pre>
+        const express = require("express")
+        const app = express()
+        const cors = require("cors")
+
+        app.use(cors({
+          origin : "*"
+        }))
+
+        app.get("/index",(req,res)=>{
+          res.send("HELLO CORS")
+        })
+
+        app.listen(3000,()=>{
+          console.log("Server is running...!!")
+        })
+      </pre>
+
+
+       <h3>17. Explain the concept of Middleware in Node.js</h3>
+       <p>Middleware is a function that access request object(req) , response object(res) and access the next middleware function in req-res application cycle.<br>
+        It accept three parameter i.e., request, response, next function<br>
+        Middleware can cancel the request in mid of the cycle.<br>
+        Types of Application :<br>
+        1. Application level middleware ==> app.use("") <br>
+        2. Routing Middleware ==> router.use("") <br>
+        3. Error Handling Middleware
+      
+      </p>
+
+
+      <h3> 18. Create a middleware which will be applicable to all the routes.</h3>
+      <pre>
+        const express = require("express")
+        const app = express()
+       
+
+        const middleware = (req,res,next)=>{
+          if(req.query.age>=18){
+            console.log("You can access this file.")
+            next()
+          }
+          else{
+            console.log("You can't access this file.")
+          }
+        }
+
+        //When you want to apply middleware to all routes
+        app.use(middleware)   
+
+        app.get("/html",(req,res)=>{
+          res.send("HTML File")
+        })
+
+        app.get("/css",(req,res)=>{
+          res.send("CSS File")
+        })
+
+        //When you want to apply specific route
+        app.get("/js", middleware,(req,res)=>{      
+          res.send("JS File")
+        })
+
+        app.listen(5000,()=>{
+          console.log("Server is running...!!")
+        })
+
+
+        //url==> http://localhost:6000/index?age=20
+      </pre>
+
+
+      <h1>Day 3</h1>
+
+      <h3>19. Implementation of all type of exports in backend application</h3>
+      <pre>
+        <p>1. Exporting a Function(Named Export):</p>
+        
+        //export.js
+        function add(a,b){
+          return a+b
+        }
+
+        module.exports = add
+
+
+        //import.js
+        const addition = require("./export")
+        
+        const result1 = addition(4,8)
+        console.log(result1)  //12
+
+        <p>2. Exporting a Single Value(Export default):</p>
+
+        //export.js
+        function add(a,b){
+          return a+b
+        }
+
+        function sub(a,b){
+          return a-b
+        }
+
+        module.exports = {
+          add,
+          sub
+        }
+
+
+        //import.js
+        const {add,sub} = require("./export")
+
+        const result2 = add(2,1)
+        console.log(result2)
+
+        const result3 = sub(2,1)
+        console.log(result3)
+
+        <p>Or we can also import "add , sub" as:</p>
+        const calc = require("./export")
+
+        const result2 = calc.add(2,1)
+        console.log(result2)
+
+        const result3 = calc.sub(2,1)
+        console.log(result3)
+
+
+        <p>3. Exporting as a Named Property:</p>
+
+        //export.js
+        exports.blogList = () =>{
+          const list = ["Bollywood", "Hollywood"]
+          return list
+        }
+
+        //import.js
+        const {blogList} = require("./export")
+
+        const result4 = blogList()
+        console.log(result4)
+
+        <p>Or we can also import "blogList" as:</p>
+        const blogModule = require("./export")
+
+        const result4 = blogModule.blogList()
+        console.log(result4)     
+      </pre>
+
+      <h3>20. What are JWT tokens?</h3>
+      <p>JWT stands for JSON Web Token, a secure way to transmit information between two parties in the form of a compact JSON object.<br>
+         It is widely used for authentication and authorization in web applications and APIs. JWTs are stateless, secure, and efficient.<br>
+         JSON Web Tokens consist of three parts separated by dots (.), which are: header, payload, and signature.<br>
+        A JWT typically looks like the following : xxxxx.yyyyy.zzzzz<br>
+        The header contains metadata, the payload has claims about the user, and the signature ensures integrity</p>
+
+      <h3>21. Define Headers,Payload, Signature </h3>
+    
+        <li>Headers ==> The header is the first part of a JWT and contains metadata, including the token's type and the signing algorithm used.</li>
+        <pre>
+          {
+            "alg": "HS256",
+            "typ": "JWT"
+          }         
+        </pre>
+        <li>Payload ==>  The payload is the second part of a JWT and contains the user's information and additional data in JSON format.</li>
+        <pre>
+          {
+            "sub": "1234567890",
+            "name": "John Doe",
+            "iat": 1516239022
+          }       
+        </pre>
+        <li>Signature ==> The signature is the third part of a JWT and is used to verify the token's authenticity and integrity. It is generated using the header, payload, a secret key, and the specified signing algorithm.</li>
+        <br>
+        The structure of a JWT looks like this: <span style="color: red;"> xxxxx.yyyyy.zzzzz</span>
+        where,
+        <li>xxxxx is the Base64Url encoded header.</li>
+        <li>yyyyy is the Base64Url encoded payload.</li>
+         <li>zzzzz is the signature.</li>
+         <br>
+
+        By combining the header, payload, and signature, JWTs provide a secure and compact way to transmit information between parties and are widely used for authentication and authorization in modern web applications and APIs.
+      </p>
+
+
+      <h3>22. How do you send the email with Express ?</h3>
+      <p>
+        To send emails with Express, you can use a library called "nodemailer", which provides a simple way to send emails from your Node.js application.
+      </p>
+
+
+      <h3>23. What is callback in node.js?</h3>
+      <p>In Node.js, a callback is a function that is passed as an argument to another function and is executed after the completion of that function. Callbacks are a fundamental aspect of asynchronous programming in Node.js and play a significant role in handling non-blocking operations.</p>
+
+
+      <h3>24. What is http Module?</h3>
+      <p>The "http" module is a core module in Node.js that provides functionality for creating HTTP servers and making HTTP requests. It allows you to build web servers, handle incoming HTTP requests, and send HTTP requests to external resources.</p>
+
+
+      <h3>25. How does react communicate with Node?</h3>
+      <p>React communicate with NodeJs using broweser's in-built "fetch" function or third-party libraries like "axios".</p>
+
+      <h3>26. Why should we use Node as backend?</h3>
+      <p>We use NodeJs as a backend bcz it uses JavaScript everywhere, asynchronous, performs non-blocking operation, works fast, cross-platform compatibility and has a Node Package Manager. </p>
+
+      <h3>27. What are Web API? Explain API Functions in Node JS.</h3>
+      <p>A Web API is a collection of endpoints exposed by a web server that enables clients (such as web browsers or mobile apps) to request and exchange data with the server.
+        <br><br>
+        In Node.js, API functions refer to the built-in modules and functions that allow developers to interact with various functionalities of the operating system and to build network applications. <br>
+        Some of the key API functions in Node.js include:<br>
+         1. fs(used for file system operations) <br>
+         2. http(used to create http Server)<br>
+         3. path(working with file and directory paths) <br>
+         4. os(access information about the operating system)
+
+        <H3>28. How do you add image using Node JS?</H3>
+        <p> Make a folder "images" and store your image there</p>
+        <PRE>
+         
+          const express = require("express");
+          const path = require("path");
+
+          const app = express();
+          const port = 3000;
+
+          // Set the "images" folder as a static directory
+          app.use("/images", express.static(path.join(__dirname, "images")));
+
+          app.listen(port, () => {
+            console.log(`Server running on http://localhost:${port}`);
+          });
+        </PRE>
+        <p>
+          
+          http://localhost:3000/images/image-name.jpg  ==>Put this URL in browser  <br>  
+          http://localhost:3000/images/img.png ==>My URL</p>
+      </p>
   </body>
 </html>
