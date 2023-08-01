@@ -14,7 +14,7 @@
       }
       pre{
         color: red;
-        margin: 0px 20px;
+        margin: 0px 0px;
       }
       ul{
         color:darkgreen;
@@ -186,7 +186,7 @@
        </pre>
 
        <h3>13. What is Express? How it helps you to create a backend application? Advantages of using express.</h3>
-       <p>EXpress is a lightweight and unopinionated web application framework that runs on NodeJs.The MAIN purpose of Express is to simplify and speed up the process of building robust backend app and APIs.
+       <p>Express is a lightweight and unopinionated web application framework that runs on NodeJs.The MAIN purpose of Express is to simplify and speed up the process of building robust backend app and APIs.
         <br>
         It helps in making backend app by providing a set tools amd features that make a easier to handle routing, manage http req and res, work with middlewares and making the development process more efficent and organized.   
        </p>
@@ -282,7 +282,7 @@
             <td>(x)</td>
             <td>500</td>
             <td>Internal Server Error</td>
-            <td>Server encountered some error(This will come whenever the client has request something from the server but server is unable to fullfilled bcz )</td>
+            <td>Server encountered some error(This will come whenever the client has request something from the server but server is unable to fullfilled bcz the logic/condition is failed. )</td>
         </tr>
         <tr>
             <td>(xi)</td>
@@ -320,12 +320,17 @@
 
        <h3>17. Explain the concept of Middleware in Node.js</h3>
        <p>Middleware is a function that access request object(req) , response object(res) and access the next middleware function in req-res application cycle.<br>
+        Middleware act as bridge between Server and Application, handling tasks & processing incoming requests before they reach the core application logic. <br>
         It accept three parameter i.e., request, response, next function<br>
         Middleware can cancel the request in mid of the cycle.<br>
-        Types of Application :<br>
+        <b>Types of Middlewares:</b>
+        <br>
         1. Application level middleware ==> app.use("") <br>
-        2. Routing Middleware ==> router.use("") <br>
-        3. Error Handling Middleware
+        2. Routing Middleware ==> express.Router() <br>
+        3. Error Handling Middleware ==> app.use((err, req, res, next) => {})  <br>
+        4. Third-party middleware:  app.use(cors())              <br>
+        5. Built-in middleware: (i)  app.use(express.static('public')); // Serves static files from the 'public' directory
+                                (ii)   app.use(express.json()); // Parses incoming JSON payloads
       
       </p>
 
@@ -367,7 +372,7 @@
         })
 
 
-        //url==> http://localhost:6000/index?age=20
+        //url==> http://localhost:6000/html?age=20
       </pre>
 
 
@@ -375,7 +380,7 @@
 
       <h3>19. Implementation of all type of exports in backend application</h3>
       <pre>
-        <p>1. Exporting a Function(Named Export):</p>
+        <p>1. Exporting a Function(Export Default):</p>
         
         //export.js
         function add(a,b){
@@ -391,7 +396,7 @@
         const result1 = addition(4,8)
         console.log(result1)  //12
 
-        <p>2. Exporting a Single Value(Export default):</p>
+        <p>2. Exporting a Single Value(Named Export):</p>
 
         //export.js
         function add(a,b){
@@ -417,7 +422,7 @@
         const result3 = sub(2,1)
         console.log(result3)
 
-        <p>Or we can also import "add , sub" as:</p>
+        <p>Or we can also import "add , sub" as a Export Default:</p>
         const calc = require("./export")
 
         const result2 = calc.add(2,1)
@@ -481,7 +486,6 @@
          <li>zzzzz is the signature.</li>
          <br>
 
-        By combining the header, payload, and signature, JWTs provide a secure and compact way to transmit information between parties and are widely used for authentication and authorization in modern web applications and APIs.
       </p>
 
 
@@ -537,5 +541,58 @@
           http://localhost:3000/images/image-name.jpg  ==>Put this URL in browser  <br>  
           http://localhost:3000/images/img.png ==>My URL</p>
       </p>
+
+      <h3>29. Difference between Authentication and Authorization.</h3>
+      <p>
+        Authentication and authorization are two vital information security processes that administrators use to protect systems and information. 
+        <br><br>
+        <b>Authentication</b> ==> Authentication is the process of verifying the identity of a user, device, or system attempting to access a particular resource or service. <br>The goal of authentication is to ensure that the claimed identity is genuine and accurate. In simple terms, it answers the question, "Who are you?"
+       <br><br><br>
+
+       <b>Authorization</b> ==> Authorization is the process of determining whether an authenticated user or entity has the right or permission to access specific resources, perform certain actions, or use particular functionalities within a system.<br>
+        It defines the level of access and control a user has over the system. In simple terms, it answers the question, "What are you allowed to do?"
+      </p>
+
+
+
+      <h3>30. What is the difference between HTTP connection and WebSocket  Connection?</h3>
+      <table border="1" cellpadding="4" cellspacing="0">
+    
+        <tr>
+            <th></th>
+            <th>HTTP connection</th>
+            <th>WebSocket  Connection</th>
+            
+        </tr>
+        <tr>
+            <td>(i)</td>
+            <td>It is unidirectional where client sends request and server send response.</td>
+            <td> It is a bidirectional full-duplex protocol meaning both the client and the server can send messages to each other at any time. </td>
+        </tr>
+        <tr>
+            <td>(ii)</td>
+            <td>Example=> Client send the request , corresponding to that request, server send the response , after sending the response connection get  terminated</td>
+            <td>Example=> Whenever we initiate the connection between client-server, the client-server made the handshaking and decide to create a new connection  and this connection will keep alive until terminated by any of them.</td>
+        </tr>
+        <tr>
+            <td>(iii)</td>
+            <td> If a user is sending 100 requests then corresponding to each request  server sends a response and each http or https request establishes  the new connection to the server every time and after getting the  response the connection gets terminated by itself. </td>
+            <td>In websocket conection , connection will not terminate after a single  request response 
+            </td>
+        </tr>
+        <tr>
+            <td>(iv)</td>
+            <td><b>Stateless Protocol:</b> Stateless Protocols are the type of network protocols  in which the Client sends a request to the server and the server  response back according to the current state</td>
+            <td><B>Stateful Protocol:</B> A Stateful Protocol is a type of network protocol in  which the client sends a server request and expects some sort of  response. In case it doesn't get a response, it then resends the intended  request. </td>
+        </tr>
+
+      </table>
+      
+      <h3>31. Some Terms</h3>
+      <p>app.get() to handle GET requests<br>
+        app.post() to handle POST requests<br>
+        app.all() to handle all HTTP methods<br>
+        app.use() to specify middleware</p>
+      
   </body>
 </html>
